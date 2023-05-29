@@ -8,6 +8,16 @@ const app = () => {
     ".nav__menuicon--close"
   );
 
+  /** Scroll Handler Functions **/
+  const handleNavOpenScroll = () => {
+    window.addEventListener("scroll", closeMobileNavLinks);
+    console.log("ran");
+  };
+  const removeScrollEventListener = () => {
+    window.removeEventListener("scroll", closeMobileNavLinks);
+    console.log("removed");
+  };
+
   /** show/hide body overlay **/
   const showBodyOverlay = () => {
     bodyOverlay.classList.add("overlay__visible");
@@ -20,10 +30,12 @@ const app = () => {
   const openMobileNavLinks = () => {
     mobileNavLinks.classList.add("open");
     showBodyOverlay();
+    handleNavOpenScroll();
   };
   const closeMobileNavLinks = () => {
     mobileNavLinks.classList.remove("open");
     hideBodyOverlay();
+    removeScrollEventListener();
   };
 
   /** event listeners **/

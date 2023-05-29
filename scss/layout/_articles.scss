@@ -1,0 +1,40 @@
+.articles {
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  &__article {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+
+  &__article__img__container {
+    outline: 5px solid red;
+  }
+
+  &__article__img {
+    height: 100%;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__article__text {
+    display: flex;
+    margin-left: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__article__text__number {
+    color: var(--Grayish-blue);
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__article__text__title {
+    font-weight: 800;
+    color: var(--Very-dark-blue);
+  }
+}

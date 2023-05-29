@@ -52,6 +52,12 @@
   &__article__text__title {
     font-weight: 800;
     color: var(--Very-dark-blue);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--Soft-red);
+    }
 
     @include u.breakpoints(xxxl) {
       font-size: 1.4rem;

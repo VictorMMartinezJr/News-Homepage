@@ -49,9 +49,15 @@
 
   &__content__h3 {
     color: var(--Off-white);
+    transition: all 0.2s ease-in-out;
 
     @include u.breakpoints(xxl) {
       font-size: 1.5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: var(--Soft-orange);
     }
   }
 

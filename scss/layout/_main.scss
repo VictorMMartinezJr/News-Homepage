@@ -5,9 +5,13 @@
 
   &__content {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     padding: 0 1rem;
+  }
+
+  &__secondary {
+    margin-top: 2rem;
   }
 
   &__img {
@@ -16,7 +20,7 @@
   }
 
   &__h1 {
-    margin: 0.5rem 0;
+    margin-bottom: 0.5rem;
     font-size: 2.5rem;
     font-weight: 800;
   }

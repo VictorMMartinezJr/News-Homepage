@@ -1,3 +1,12 @@
+@use "../util/" as u;
+
+.hero__container {
+  @include u.breakpoints(xxl) {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    padding: 0 6rem;
+  }
+}
 .main {
   display: flex;
   justify-content: center;
@@ -8,10 +17,21 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     padding: 0 1rem;
+    @include u.breakpoints(xxl) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 0;
+    }
   }
 
   &__secondary {
     margin-top: 2rem;
+    @include u.breakpoints(xxl) {
+      display: flex;
+      height: 100%;
+      margin-top: 3rem;
+    }
   }
 
   &__img {
@@ -19,15 +39,57 @@
     object-fit: contain;
   }
 
+  &__img--mobile {
+    @include u.breakpoints(xl) {
+      display: none;
+    }
+  }
+  &__img--desktop {
+    display: none;
+    @include u.breakpoints(xl) {
+      display: block;
+    }
+  }
+
   &__h1 {
     margin-bottom: 0.5rem;
     font-size: 2.5rem;
     font-weight: 800;
+
+    @include u.breakpoints(xxl) {
+      font-size: 4rem;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+
+  &__text {
+    @include u.breakpoints(xxl) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: start;
+    }
+  }
+
+  &__text__p__container {
+    @include u.breakpoints(xxl) {
+      display: flex;
+      justify-content: end;
+      flex: 2;
+      width: 100%;
+      padding-left: 7rem;
+    }
   }
 
   &__text__p {
     line-height: 1.5;
     color: var(--Dark-grayish-blue);
+
+    @include u.breakpoints(xxxl) {
+      font-size: 1.2rem;
+      line-height: 2;
+    }
   }
 
   &__text__btn {
@@ -38,6 +100,10 @@
     font-weight: 700;
     letter-spacing: 5px;
     border: none;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+
+    @include u.breakpoints(xxl) {
+      margin-left: 7rem;
+    }
   }
 }

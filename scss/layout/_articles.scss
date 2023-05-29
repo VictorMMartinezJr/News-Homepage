@@ -1,16 +1,28 @@
+@use "../util/" as u;
+
 .articles {
   padding: 0 1rem;
   margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
 
+  @include u.breakpoints(xl) {
+    flex-direction: row;
+  }
+
+  @include u.breakpoints(xxl) {
+    padding: 0 6rem;
+  }
+
   &__article {
     display: flex;
     margin-bottom: 2rem;
   }
-
-  &__article__img__container {
-    outline: 5px solid red;
+  &__article:nth-child(2) {
+    @include u.breakpoints(xxl) {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
   }
 
   &__article__img {
@@ -25,6 +37,10 @@
     margin-left: 1rem;
     flex-direction: column;
     justify-content: space-between;
+
+    @include u.breakpoints(xxxl) {
+      font-size: 1.2rem;
+    }
   }
 
   &__article__text__number {
@@ -36,5 +52,9 @@
   &__article__text__title {
     font-weight: 800;
     color: var(--Very-dark-blue);
+
+    @include u.breakpoints(xxxl) {
+      font-size: 1.4rem;
+    }
   }
 }

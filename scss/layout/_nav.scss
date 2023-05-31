@@ -58,6 +58,10 @@
     &:hover {
       color: var(--Soft-red);
     }
+
+    @include u.breakpoints(lg) {
+      color: var(--Dark-grayish-blue);
+    }
   }
 
   &__menuicon {
